@@ -5,7 +5,7 @@
 
 working_dir=`pwd`
 
-#Get namesapce variable
+# #Get namesapce variable
 # tenant=`awk '{print $NF}' $working_dir/tenant_export`
 
 # read -p 'Enter path to the jmx file ' jmx
@@ -30,8 +30,8 @@ master_pod=`oc get pod  | grep jmeter-master | awk '{print $1}'`
 
 oc cp cloudssky.jmx $master_pod:/jmeter/cloudssky.jmx
 
-oc cp cloudssky.jmx $master_pod:/tmp/cloudssky.jmx
+#oc cp cloudssky.jmx $master_pod:/tmp/cloudssky.jmx
 
 ## Echo Starting Jmeter load test
 
-oc exec -ti $master_pod -- /bin/bash /jmeter/load_test cloudssky.jmx
+oc exec -ti $master_pod -- /bin/bash /jmeter/load_test /jmeter/cloudssky.jmx

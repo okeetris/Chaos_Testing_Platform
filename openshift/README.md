@@ -2,17 +2,24 @@
 
 ## Prerequisits
 
-Kubernetes > 1.8
+Kubernetes > 1.11
 
 OpenShift version > 3.11
 
-N.B.: this implementation was tested on Kubernetes 1.9, 1.10, and 1.11 and OpenShift 3.11
+N.B.: this implementation was tested on Kubernetes 1.11 and OpenShift 3.11
 
 ## TL;DR
 
+### Create InfluxDB and build grafana dashboard
+```
 ./dashboard.sh
-
-oc expose svc/*service name*
-
+```
+### Expose Grafana service
+```
+oc expose svc/<grafana service name>
+```
+### start JMeter test script
+```
 ./start_test.sh
+```
 
