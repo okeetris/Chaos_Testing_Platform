@@ -14,7 +14,11 @@ N.B.: this implementation was tested on Kubernetes 1.11 and OpenShift 3.11
 ```
 ./dashboard.sh
 ```
-### Expose Grafana service
+### Check the grafana service to see if it has been exposed
+```
+oc get services
+```
+### Expose Grafana service (If not exposed yet)
 ```
 oc expose svc/<grafana service name>
 ```
