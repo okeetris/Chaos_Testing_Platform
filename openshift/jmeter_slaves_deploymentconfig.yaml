@@ -5,7 +5,7 @@ metadata:
     jmeter_mode: slaves
   name: jmeter-slaves
 spec:
-  replicas: 3
+  replicas: 5
   selector:
     jmeter_mode: slaves
   strategy:
