@@ -8,8 +8,6 @@ working_dir=`pwd`
 #Get namesapce variable
 tenant=`awk '{print $NF}' $working_dir/tenant_export`
 
-echo $JMX
-
 read -p 'Enter path to the jmx file ' jmx
 
 # if [ ! -f "$jmx" ];
@@ -23,7 +21,7 @@ read -p 'Enter path to the jmx file ' jmx
 
 #master_pod=`kubectl get pod -n loadtesting | grep jmeter-master | awk '{print $1}'`
 
-if [ ! -f "$JMX"]
+if [ ! -f "$jmx"]
 then 
     read -p 'Enter path to the jmx file ' jmx
     exit
@@ -35,7 +33,7 @@ master_pod=`oc get pod  | grep jmeter-master | awk '{print $1}'`
 
 #oc cp $jmx $master_pod:/$jmx
 
-oc cp $JMX $master_pod:/jmeter/testScript.jmx
+oc cp $jmx $master_pod:/jmeter/testScript.jmx
 
 #oc cp cloudssky.jmx $master_pod:/tmp/cloudssky.jmx
 
