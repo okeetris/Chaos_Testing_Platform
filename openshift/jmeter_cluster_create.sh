@@ -9,7 +9,7 @@ echo "checking if oc is present"
 if ! hash oc 2>/dev/null
 then
     echo "'oc' was not found in PATH"
-    echo "Kindly ensure that you can acces an existing OpenShift cluster via oc"
+    echo "Ensure that you can acces an existing OpenShift cluster via oc"
     exit
 fi
 
