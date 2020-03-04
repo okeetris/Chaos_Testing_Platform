@@ -21,7 +21,7 @@ read -p 'Enter path to the jmx file ' jmx
 
 #master_pod=`kubectl get pod -n loadtesting | grep jmeter-master | awk '{print $1}'`
 
-if [ ! -f "$jmx"]
+if [ ! -f "$jmx" ];
 then 
     read -p 'Enter path to the jmx file ' jmx
     exit

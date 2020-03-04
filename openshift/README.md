@@ -1,6 +1,4 @@
-# Jmeter Cluster Support for Kubernetes and OpenShift
-
-## Prerequisits
+Not all Tasks in the Pipeline have finished executing
 
 Kubernetes > 1.11
 
