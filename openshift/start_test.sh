@@ -33,10 +33,12 @@ master_pod=`oc get pod  | grep jmeter-master | awk '{print $1}'`
 
 #oc cp $jmx $master_pod:/$jmx
 
-oc cp $jmx $master_pod:/jmeter/testScript.jmx
+read -p $jmx test
+
+oc cp $jmx $master_pod:/jmeter/$jmx.jmx
 
 #oc cp cloudssky.jmx $master_pod:/tmp/cloudssky.jmx
 
 ##Echo Starting Jmeter load test
 
-oc exec -ti $master_pod -- /bin/bash /jmeter/load_test /jmeter/testScript.jmx
+oc exec -ti $master_pod -- /bin/bash /jmeter/load_test /jmeter/$jmx.jmx
