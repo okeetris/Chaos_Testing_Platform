@@ -33,8 +33,6 @@ master_pod=`oc get pod  | grep jmeter-master | awk '{print $1}'`
 
 #oc cp $jmx $master_pod:/$jmx
 
-read -p $jmx test
-
 oc cp $jmx $master_pod:/jmeter/$jmx.jmx
 
 #oc cp cloudssky.jmx $master_pod:/tmp/cloudssky.jmx
