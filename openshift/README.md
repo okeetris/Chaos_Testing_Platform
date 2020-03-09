@@ -1,4 +1,4 @@
-Not all Tasks in the Pipeline have finished executing
+### Preqresites
 
 Kubernetes > 1.11
 
@@ -22,16 +22,25 @@ chmod +x jmeter_cluster_create.sh dashboard.sh start_test.sh copy_test.sh jmeter
 ```
 ./dashboard.sh
 ```
+
 ### Check the grafana service to see if it has been exposed
 ```
 oc get services
 ```
+
 ### Expose Grafana service (If not exposed yet)
 ```
 oc expose svc/<grafana service name>
 ```
+
 ### start JMeter test script
 ```
 ./start_test.sh
 ```
+ 
+### Stop all tests and rebuild Jmeter
+```
+./jmeter_stop.sh
+```
+
 
